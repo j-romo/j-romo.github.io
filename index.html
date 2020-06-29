@@ -1,1 +1,926 @@
-hello world
+<!doctype html>
+<html>
+  <head>
+    <title>Joaquin Romo CV - OpenAPI 3.0 Documentation Demo</title>
+    <style type="text/css">
+      body {
+      	font-family: Trebuchet MS, sans-serif;
+      	font-size: 15px;
+      	color: #444;
+      	margin-right: 24px;
+      }
+
+      h1	{
+      	font-size: 25px;
+      }
+      h2	{
+      	font-size: 20px;
+      }
+      h3	{
+      	font-size: 16px;
+      	font-weight: bold;
+      }
+      hr	{
+      	height: 1px;
+      	border: 0;
+      	color: #ddd;
+      	background-color: #ddd;
+      }
+
+      .app-desc {
+        clear: both;
+        margin-left: 20px;
+      }
+      .param-name {
+        width: 100%;
+      }
+      .license-info {
+        margin-left: 20px;
+      }
+
+      .license-url {
+        margin-left: 20px;
+      }
+
+      .model {
+        margin: 0 0 0px 20px;
+      }
+
+      .method {
+        margin-left: 20px;
+      }
+
+      .method-notes	{
+      	margin: 10px 0 20px 0;
+      	font-size: 90%;
+      	color: #555;
+      }
+
+      pre {
+        padding: 10px;
+        margin-bottom: 2px;
+      }
+
+      .http-method {
+       text-transform: uppercase;
+      }
+
+      pre.get {
+        background-color: #0f6ab4;
+      }
+
+      pre.post {
+        background-color: #10a54a;
+      }
+
+      pre.put {
+        background-color: #c5862b;
+      }
+
+      pre.delete {
+        background-color: #a41e22;
+      }
+
+      .huge	{
+      	color: #fff;
+      }
+
+      pre.example {
+        background-color: #f3f3f3;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+
+      code {
+        white-space: pre;
+      }
+
+      .nickname {
+        font-weight: bold;
+      }
+
+      .method-path {
+        font-size: 1.5em;
+        background-color: #0f6ab4;
+      }
+
+      .up {
+        float:right;
+      }
+
+      .parameter {
+        width: 500px;
+      }
+
+      .param {
+        width: 500px;
+        padding: 10px 0 0 20px;
+        font-weight: bold;
+      }
+
+      .param-desc {
+        width: 700px;
+        padding: 0 0 0 20px;
+        color: #777;
+      }
+
+      .param-type {
+        font-style: italic;
+      }
+
+      .param-enum-header {
+      width: 700px;
+      padding: 0 0 0 60px;
+      color: #777;
+      font-weight: bold;
+      }
+
+      .param-enum {
+      width: 700px;
+      padding: 0 0 0 80px;
+      color: #777;
+      font-style: italic;
+      }
+
+      .field-label {
+        padding: 0;
+        margin: 0;
+        clear: both;
+      }
+
+      .field-items	{
+      	padding: 0 0 15px 0;
+      	margin-bottom: 15px;
+      }
+
+      .return-type {
+        clear: both;
+        padding-bottom: 10px;
+      }
+
+      .param-header {
+        font-weight: bold;
+      }
+
+      .method-tags {
+        text-align: right;
+      }
+
+      .method-tag {
+        background: none repeat scroll 0% 0% #24A600;
+        border-radius: 3px;
+        padding: 2px 10px;
+        margin: 2px;
+        color: #FFF;
+        display: inline-block;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>Joaquin Romo CV - OpenAPI 3.0</h1>
+    <div class="app-desc"><p>This sample API provides information about my Technical Writing skills and experience documenting RESTful APIs following the OAS.</p>
+<p>Some useful links:</p>
+<ul>
+<li><a href="https://www.linkedin.com/in/jromoe/">LinkedIn</a></li>
+<li><a href="https://github.com/j-romo">GitHub</a></li>
+</ul>
+</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="joaquin.romo@gmail.com">joaquin.romo@gmail.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+
+    <div class="license-info">Apache 2.0</div>
+    <div class="license-url">http://www.apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+    <ol>
+      <li>APIKey KeyParamName:api_key KeyInQuery:false KeyInHeader:true</li>
+      <li>OAuth AuthorizationUrl:https://petstore3.swagger.io/oauth/authorizeTokenUrl:</li>
+    </ol>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Contact">Contact</a></h4>
+  <ul>
+  <li><a href="#getContactDetails"><code><span class="http-method">get</span> /contact/business_card</code></a></li>
+  <li><a href="#offerJobOpening"><code><span class="http-method">post</span> /contact/job_offer</code></a></li>
+  <li><a href="#provideContactDetails"><code><span class="http-method">post</span> /contact/business_card</code></a></li>
+  </ul>
+  <h4><a href="#Education">Education</a></h4>
+  <ul>
+  <li><a href="#getUserByName"><code><span class="http-method">get</span> /education/teaching</code></a></li>
+  <li><a href="#loginUser"><code><span class="http-method">get</span> /education</code></a></li>
+  <li><a href="#logoutUser"><code><span class="http-method">get</span> /education/certificates</code></a></li>
+  </ul>
+  <h4><a href="#Experience">Experience</a></h4>
+  <ul>
+  <li><a href="#getInventory"><code><span class="http-method">get</span> /experience/current_job</code></a></li>
+  <li><a href="#getOrderById"><code><span class="http-method">get</span> /experience/past_jobs</code></a></li>
+  </ul>
+  <h4><a href="#Profile">Profile</a></h4>
+  <ul>
+  <li><a href="#findPetsByStatus"><code><span class="http-method">get</span> /profile</code></a></li>
+  <li><a href="#findPetsByTags"><code><span class="http-method">get</span> /profile/languages</code></a></li>
+  </ul>
+
+  <h1><a name="Contact">Contact</a></h1>
+  <div class="method"><a name="getContactDetails"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /contact/business_card</code></pre></div>
+    <div class="method-summary">Retrieve Joaquin&#x27;s contact details (<span class="nickname">getContactDetails</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#User">User</a>
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "firstName" : "John",
+  "lastName" : "James",
+  "password" : "12345",
+  "userStatus" : 1,
+  "phone" : "12345",
+  "id" : 10,
+  "email" : "john@email.com",
+  "username" : "theUser"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/xml</code></li>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#User">User</a>
+    <h4 class="field-label">400</h4>
+    Invalid username supplied
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    User not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="offerJobOpening"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /contact/job_offer</code></pre></div>
+    <div class="method-summary">Share a job opening (<span class="nickname">offerJobOpening</span>)</div>
+    <div class="method-notes">Sumbit a job opening if you want Joaquin to collaborate in your company.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>application/xml</code></li>
+      <li><code>application/x-www-form-urlencoded</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#Order">Order</a> (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Form parameters</h3>
+    <div class="field-items">
+      <div class="param">id (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: int64</div>      <div class="param">petId (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: int64</div>      <div class="param">quantity (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: int32</div>      <div class="param">shipDate (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: date-time</div>      <div class="param">status (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">complete (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Order">Order</a>
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "petId" : 198772,
+  "quantity" : 7,
+  "id" : 10,
+  "shipDate" : "2000-01-23T04:56:07.000+00:00",
+  "complete" : true,
+  "status" : "approved"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#Order">Order</a>
+    <h4 class="field-label">405</h4>
+    Invalid input
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="provideContactDetails"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /contact/business_card</code></pre></div>
+    <div class="method-summary">Submit your contact information (<span class="nickname">provideContactDetails</span>)</div>
+    <div class="method-notes">Submit your job opening if you consider Joaquin meets the job requirements.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+      <li><code>application/xml</code></li>
+      <li><code>application/x-www-form-urlencoded</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#Order">Order</a> (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Form parameters</h3>
+    <div class="field-items">
+      <div class="param">id (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: int64</div>      <div class="param">petId (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: int64</div>      <div class="param">quantity (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: int32</div>      <div class="param">shipDate (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  format: date-time</div>      <div class="param">status (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>      <div class="param">complete (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Order">Order</a>
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "petId" : 198772,
+  "quantity" : 7,
+  "id" : 10,
+  "shipDate" : "2000-01-23T04:56:07.000+00:00",
+  "complete" : true,
+  "status" : "approved"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#Order">Order</a>
+    <h4 class="field-label">405</h4>
+    Invalid input
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Education">Education</a></h1>
+  <div class="method"><a name="getUserByName"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /education/teaching</code></pre></div>
+    <div class="method-summary">Get user by user name (<span class="nickname">getUserByName</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#User">User</a>
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "firstName" : "John",
+  "lastName" : "James",
+  "password" : "12345",
+  "userStatus" : 1,
+  "phone" : "12345",
+  "id" : 10,
+  "email" : "john@email.com",
+  "username" : "theUser"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/xml</code></li>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#User">User</a>
+    <h4 class="field-label">400</h4>
+    Invalid username supplied
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    User not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="loginUser"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /education</code></pre></div>
+    <div class="method-summary">Logs user into the system (<span class="nickname">loginUser</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">username (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The user name for login </div>      <div class="param">password (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The password for login in clear text </div>    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>""</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/xml</code></li>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#String">String</a>
+    <h4 class="field-label">400</h4>
+    Invalid username/password supplied
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="logoutUser"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /education/certificates</code></pre></div>
+    <div class="method-summary">Logs out current logged in user session (<span class="nickname">logoutUser</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">default</h4>
+    successful operation
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Experience">Experience</a></h1>
+  <div class="method"><a name="getInventory"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /experience/current_job</code></pre></div>
+    <div class="method-summary">Returns pet inventories by status (<span class="nickname">getInventory</span>)</div>
+    <div class="method-notes">Returns a map of status codes to quantities</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+
+      map[String, Integer]
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "key" : 0
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getOrderById"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /experience/past_jobs</code></pre></div>
+    <div class="method-summary">Find purchase order by ID (<span class="nickname">getOrderById</span>)</div>
+    <div class="method-notes">For valid response try integer IDs with value &amp;lt;&#x3D; 5 or &amp;gt; 10.</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Order">Order</a>
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "petId" : 198772,
+  "quantity" : 7,
+  "id" : 10,
+  "shipDate" : "2000-01-23T04:56:07.000+00:00",
+  "complete" : true,
+  "status" : "approved"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/xml</code></li>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#Order">Order</a>
+    <h4 class="field-label">400</h4>
+    Invalid ID supplied
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Order not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Profile">Profile</a></h1>
+  <div class="method"><a name="findPetsByStatus"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /profile</code></pre></div>
+    <div class="method-summary">Personal Profile Summary (<span class="nickname">findPetsByStatus</span>)</div>
+    <div class="method-notes">Consult the personal information details about Joaquin.</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Pet">Pet</a>]
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "photoUrls" : [ "photoUrls", "photoUrls" ],
+  "name" : "doggie",
+  "id" : 10,
+  "category" : {
+    "name" : "Dogs",
+    "id" : 1
+  },
+  "tags" : [ {
+    "name" : "name",
+    "id" : 0
+  }, {
+    "name" : "name",
+    "id" : 0
+  } ],
+  "status" : "available"
+}, {
+  "photoUrls" : [ "photoUrls", "photoUrls" ],
+  "name" : "doggie",
+  "id" : 10,
+  "category" : {
+    "name" : "Dogs",
+    "id" : 1
+  },
+  "tags" : [ {
+    "name" : "name",
+    "id" : 0
+  }, {
+    "name" : "name",
+    "id" : 0
+  } ],
+  "status" : "available"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/xml</code></li>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+
+    <h4 class="field-label">400</h4>
+    Invalid status value
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="findPetsByTags"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /profile/languages</code></pre></div>
+    <div class="method-summary">Finds Pets by tags (<span class="nickname">findPetsByTags</span>)</div>
+    <div class="method-notes">Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">tags (optional)</div>
+
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Tags to filter by </div>    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Pet">Pet</a>]
+
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "photoUrls" : [ "photoUrls", "photoUrls" ],
+  "name" : "doggie",
+  "id" : 10,
+  "category" : {
+    "name" : "Dogs",
+    "id" : 1
+  },
+  "tags" : [ {
+    "name" : "name",
+    "id" : 0
+  }, {
+    "name" : "name",
+    "id" : 0
+  } ],
+  "status" : "available"
+}, {
+  "photoUrls" : [ "photoUrls", "photoUrls" ],
+  "name" : "doggie",
+  "id" : 10,
+  "category" : {
+    "name" : "Dogs",
+    "id" : 1
+  },
+  "tags" : [ {
+    "name" : "name",
+    "id" : 0
+  }, {
+    "name" : "name",
+    "id" : 0
+  } ],
+  "status" : "available"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/xml</code></li>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+
+    <h4 class="field-label">400</h4>
+    Invalid tag value
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#Address"><code>Address</code></a></li>
+    <li><a href="#Category"><code>Category</code></a></li>
+    <li><a href="#Customer"><code>Customer</code></a></li>
+    <li><a href="#Order"><code>Order</code></a></li>
+    <li><a href="#Pet"><code>Pet</code></a></li>
+    <li><a href="#Tag"><code>Tag</code></a></li>
+    <li><a href="#User"><code>User</code></a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="Address"><code>Address</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">street (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 437 Lytton</span></div>
+<div class="param">city (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Palo Alto</span></div>
+<div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: CA</span></div>
+<div class="param">zip (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 94301</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Category"><code>Category</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 1</span></div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: Dogs</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Customer"><code>Customer</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 100000</span></div>
+<div class="param">username (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: fehguy</span></div>
+<div class="param">address (optional)</div><div class="param-desc"><span class="param-type"><a href="#Address">array[Address]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Order"><code>Order</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 10</span></div>
+<div class="param">petId (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 198772</span></div>
+<div class="param">quantity (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+          <div class="param-desc"><span class="param-type">example: 7</span></div>
+<div class="param">shipDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+<div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Order Status </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">placed</div><div class="param-enum">approved</div><div class="param-enum">delivered</div>
+          <div class="param-desc"><span class="param-type">example: approved</span></div>
+<div class="param">complete (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Pet"><code>Pet</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 10</span></div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: doggie</span></div>
+<div class="param">category (optional)</div><div class="param-desc"><span class="param-type"><a href="#Category">Category</a></span>  </div>
+<div class="param">photoUrls </div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span>  </div>
+<div class="param">tags (optional)</div><div class="param-desc"><span class="param-type"><a href="#Tag">array[Tag]</a></span>  </div>
+<div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> pet status in the store </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">available</div><div class="param-enum">pending</div><div class="param-enum">sold</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Tag"><code>Tag</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="User"><code>User</code></a> <a class="up" href="#__Models">Up</a></h3>
+
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+          <div class="param-desc"><span class="param-type">example: 10</span></div>
+<div class="param">username (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: theUser</span></div>
+<div class="param">firstName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: John</span></div>
+<div class="param">lastName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: James</span></div>
+<div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: john@email.com</span></div>
+<div class="param">password (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 12345</span></div>
+<div class="param">phone (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 12345</span></div>
+<div class="param">userStatus (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> User Status format: int32</div>
+          <div class="param-desc"><span class="param-type">example: 1</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
